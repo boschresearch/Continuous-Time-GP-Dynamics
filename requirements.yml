@@ -1,0 +1,14 @@
+name: continuous_time_gp_env
+channels:
+  - pytorch
+  - nvidia
+  - defaults
+dependencies:
+  - gpy
+  - matplotlib
+  - numpy
+  - pip
+  - pytorch
+  - scipy
+  - pydantic
+  - tensorboard

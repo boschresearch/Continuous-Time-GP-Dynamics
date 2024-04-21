@@ -1,0 +1,117 @@
+{
+     "dynamicgp_config": {
+        "pretrain_gpy" :  true,
+        "gp_config": {
+            "TaylorGPConfig": "",
+            "kernel_config": {
+                "TaylorKernelConfig": "",
+                "order": 2,
+                "basekernel_config": {
+                    "num_fourier_feat": 256,
+                    "act_func": "log",
+                    "lengthscale": [
+                        [
+                            [
+                                1.0,
+                                1.0
+                            ],
+                            [
+                                1.0,
+                                1.0
+                            ]
+                        ],
+                        [
+                            [
+                                1.0,
+                                1.0
+                            ],
+                            [
+                                1.0,
+                                1.0
+                            ]
+                        ]
+                    ],
+                    "sigma_k": [
+                        0.5,
+                        0.5
+                    ],
+                    "ard": true
+                }
+            },
+            "order": 2,
+            "act_func": "log",
+            "init_obs_noise": [
+                0.5,
+                0.5
+            ],
+            "noise_mode": "exact"
+        }
+    },
+    "data_config": {
+        "method": "taylor",
+        "integration_rule": "",
+        "dataset_config": {
+            "SyntheticDataConfig": "",
+            "model": "van_der_pol",
+            "split_config": {
+                "a_train": 0,
+                "b_train": -1,
+                "a_eval": [
+                    0,
+                    50
+                ],
+                "b_eval": [
+                    -1,
+                    -1
+                ]
+            },
+            "simulation_config": {
+                "dt": 0.2,
+                "t_endpoints": [
+                    0.0,
+                    10.0
+                ],
+                "y0": [
+                    -1.5,
+                    2.5
+                ],
+                "bound": 0.3,
+                "noise_std": 0.0
+            },
+            "test_config": {
+                "dt": 0.2,
+                "t_endpoints": [
+                    0.0,
+                    20.0
+                ],
+                "y0": [
+                    -1.5,
+                    2.5
+                ],
+                "bound": 0.0,
+                "noise_std": 0.0
+            }
+        }
+    },
+    "train_config": {
+        "epochs": 1500,
+        "lr": 0.01,
+        "algorithm": "Adam",
+        "print_onscreen": false
+    },
+    "prediction_config": {
+        "ds_pred": true,
+        "mean_pred": true,
+        "ds_prior_noise": true,
+        "num_ds_trajectories": 256,
+        "integrator_config": [
+            {
+                "order": 2,
+                "TaylorIntegratorConfig": ""
+            },
+            {
+                "TrajectorySamplerConfig": ""
+            }
+        ]
+    }
+}
