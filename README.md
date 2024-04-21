@@ -319,5 +319,5 @@ For mathematical details, we refer to the paper.
 # Note
 This implementation is written by Nicholas Tagliapietra and Katharina Ensinger 
  
-#References
-[1] J. Wilson et al. Efficiently sampling functions from Gaussian process posteriors. In Internation Conference on Machine Learning (2020).
+## References
+[1] J. Wilson et al. Efficiently sampling functions from Gaussian process posteriors. In International Conference on Machine Learning (2020).
